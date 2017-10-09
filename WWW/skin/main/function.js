@@ -2445,6 +2445,182 @@ function tzKLSFSelect(){
 		return {actionData:code.join(' '), actionNum:combine(code, codeLen).length};
 	}
 }
+
+//-------------- 斗牛玩法-start-----------------------
+
+function dnYnAction(){
+    var code=[], len=1,codeLen=parseInt(this.attr('length'));
+    var $d=$(this).filter(':visible:first'),
+        dLen=$('.code.checked', $d).length;
+    if(dLen<1){
+        throw('至少选1位数');
+    }else{
+        var dCode=[];
+        $('.code.checked', $d).each(function(i,o){
+            dCode[i]=o.value;
+        });
+        var zjNums = countZJNum(dCode);
+        var zjNum = zjNums[1]+zjNums[2]+zjNums[3]+zjNums[4]+zjNums[5]+zjNums[6]+zjNums[7]+zjNums[8]+zjNums[9];
+        if(zjNum == 0){
+            throw('此选法没有牛');
+        }
+        return {actionData:dCode.join(','), actionNum:1};
+    }
+}
+
+/**
+ * 斗牛：牛牛
+ * @returns {{actionData: string, actionNum: number}}
+ */
+function dnNnAction(){
+    var code=[], len=1,codeLen=parseInt(this.attr('length'));
+    var $d=$(this).filter(':visible:first'),
+        dLen=$('.code.checked', $d).length;
+    if(dLen<1){
+        throw('至少选1位数');
+    }else{
+        var dCode=[];
+        $('.code.checked', $d).each(function(i,o){
+            dCode[i]=o.value;
+        });
+        var zjNums = countZJNum(dCode);
+        var zjNum = zjNums[0];
+        if(zjNum == 0){
+            throw('此选法没有牛牛');
+        }
+        return {actionData:dCode.join(','), actionNum:1};
+    }
+}
+
+/**
+ * 斗牛：牛小
+ * @returns {{actionData: string, actionNum: number}}
+ */
+function dnNxAction(){
+    var code=[], len=1,codeLen=parseInt(this.attr('length'));
+    var $d=$(this).filter(':visible:first'),
+        dLen=$('.code.checked', $d).length;
+    if(dLen<1){
+        throw('至少选1位数');
+    }else{
+        var dCode=[];
+        $('.code.checked', $d).each(function(i,o){
+            dCode[i]=o.value;
+        });
+        var zjNums = countZJNum(dCode);
+        var zjNum = zjNums[1]+zjNums[2]+zjNums[3]+zjNums[4]+zjNums[5];
+        if(zjNum == 0){
+            throw('此选法没有牛小');
+        }
+        return {actionData:dCode.join(','), actionNum:1};
+    }
+}
+
+/**
+ * 斗牛：牛大
+ * @returns {{actionData: string, actionNum: number}}
+ */
+function dnNdAction(){
+    var code=[], len=1,codeLen=parseInt(this.attr('length'));
+    var $d=$(this).filter(':visible:first'),
+        dLen=$('.code.checked', $d).length;
+    if(dLen<1){
+        throw('至少选1位数');
+    }else{
+        var dCode=[];
+        $('.code.checked', $d).each(function(i,o){
+            dCode[i]=o.value;
+        });
+
+        var zjNums = countZJNum(dCode);
+        var zjNum = zjNums[6]+zjNums[7]+zjNums[8]+zjNums[9];
+        if(zjNum == 0){
+            throw('此选法没有牛大');
+		}
+        countDNPL(zjNum)
+        return {actionData:dCode.join(','), actionNum:1};
+    }
+}
+
+
+/*
+ * 计算有没有牛，返回牛几
+ * 参数 出牌 5张牌  0-9
+ * 返回-1 代表没有牛
+ * 返回0 代表牛牛
+ * 返回1-9 代表牛几
+ */
+function cal(cards) {
+//    console.log("cards = "+ cards);
+    var s = 0;
+    var dict = {};
+    for (var i = 0; i < cards.length; i++) {
+        var ci = cards[i];
+        s += ci;
+        dict[ci] = dict[ci] === undefined ? 1 : dict[ci] + 1;
+    };
+    var point = s % 10;
+
+    var exists = false;
+    for (var i in dict) {
+        var other = (10 + point - i) % 10;
+        if (dict[other]) {
+            if ((other == i && dict[other] >= 2) || (other!=i&&dict[other] >= 1)) {
+                exists = true;
+                break;
+            }
+        }
+
+    }
+    return exists ? point : -1;
+}
+
+/**
+ * 根据选择的号码计算中奖可能总数。
+ */
+function countZJNum(dict){
+    //返回的中奖num数组，下标0代表牛牛， 下标1代表牛1，以此类推，下标10代表没有牛
+    var reObj=[];
+    for(var n = 0 ; n <=10 ;n ++){
+        reObj.push(0);
+    }
+    //中奖可能组合数
+    var zjNum=0;
+    for (var n1 in dict) {
+        for (var n2 in dict) {
+            for (var n3 in dict) {
+                for (var n4 in dict) {
+                    for (var n5 in dict) {
+                        var cards = [dict[n1],dict[n2],dict[n3],dict[n4],dict[n5]];
+                        var niuNum = cal(cards);
+                        switch(niuNum){
+                            case -1:
+                                reObj[10] = reObj[10] +1;
+                                break;
+                            default:
+                                reObj[niuNum] = reObj[niuNum] +1;
+                                break;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // console.log(reObj);
+    return reObj;
+}
+
+function countDNPL(zjNum) {
+    //单注中奖金额
+    var zjje = (100000/zjNum) * 2;
+	//四舍五入
+    zjje = zjje.toFixed(2);
+    var plObj = {'bonusProp':zjje,'bonusPropBase':1};
+    // console.log(plObj)
+    gameSetPl(plObj);
+    return zjje;
+}
+//-----------------------斗牛玩法  end--------------------
 function GetRandomNum(Min,Max)
 {   
 	var Range = Max - Min;   

@@ -3,7 +3,7 @@ require_once('xingcai_sqlin.php');
 $conf['debug']['level']=5;
 
 /*		数据库配置		*/
-$conf['db']['dsn']='mysql:host=localhost;dbname=0xc;charset=utf8';
+$conf['db']['dsn']='mysql:host=127.0.0.1;dbname=0xc;charset=utf8';
 $dbname='0xc';
 $dbhost='localhost';
 $conf['db']['user']='root';
