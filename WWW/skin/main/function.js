@@ -2448,6 +2448,10 @@ function tzKLSFSelect(){
 
 //-------------- 斗牛玩法-start-----------------------
 
+/**
+ * 斗牛：有牛
+ * @returns {{actionData: string, actionNum: number}}
+ */
 function dnYnAction(){
     var code=[], len=1,codeLen=parseInt(this.attr('length'));
     var $d=$(this).filter(':visible:first'),
@@ -2464,7 +2468,31 @@ function dnYnAction(){
         if(zjNum == 0){
             throw('此选法没有牛');
         }
-        return {actionData:dCode.join(','), actionNum:1};
+        return {actionData:dCode.join(','), actionNum:zjNum};
+    }
+}
+
+/**
+ * 斗牛：没牛
+ * @returns {{actionData: string, actionNum: number}}
+ */
+function dnMnAction(){
+    var code=[], len=1,codeLen=parseInt(this.attr('length'));
+    var $d=$(this).filter(':visible:first'),
+        dLen=$('.code.checked', $d).length;
+    if(dLen<1){
+        throw('至少选1位数');
+    }else{
+        var dCode=[];
+        $('.code.checked', $d).each(function(i,o){
+            dCode[i]=o.value;
+        });
+        var zjNums = countZJNum(dCode);
+        var zjNum = zjNums[10];
+        if(zjNum == 0){
+            throw('此选法一定有牛');
+        }
+        return {actionData:dCode.join(','), actionNum:zjNum};
     }
 }
 
@@ -2488,31 +2516,43 @@ function dnNnAction(){
         if(zjNum == 0){
             throw('此选法没有牛牛');
         }
-        return {actionData:dCode.join(','), actionNum:1};
+        return {actionData:dCode.join(','), actionNum:zjNum};
     }
 }
 
 /**
  * 斗牛：牛小
- * @returns {{actionData: string, actionNum: number}}
  */
 function dnNxAction(){
     var code=[], len=1,codeLen=parseInt(this.attr('length'));
-    var $d=$(this).filter(':visible:first'),
-        dLen=$('.code.checked', $d).length;
-    if(dLen<1){
+    var dLen = 0;
+    $(this).each(function(rowNum,rowObj){
+        dLen=dLen + $('.code.checked', rowObj).length;
+	});
+    if(dLen < 1){
         throw('至少选1位数');
     }else{
-        var dCode=[];
-        $('.code.checked', $d).each(function(i,o){
-            dCode[i]=o.value;
+    	var lowCodes = [];
+
+        $(this).each(function(rowNum,rowObj){
+        	if($('.code.checked', rowObj).length == 0){
+        		return;
+			}
+            var dCode=[];
+            $('.code.checked', rowObj).each(function(i,o){
+                dCode[i]=o.value;
+            });
+            var zjNums = countZJNum(dCode);
+            if(zjNums[rowNum] == 0){
+                return;
+            }
+            var returnObj = {playedId:$("input[name='playedId']").val(), playedName:$(rowObj).attr('playedname'), actionData:dCode.join(','), actionNum:zjNums[rowNum], isZ6:false};
+            lowCodes.push(returnObj);
         });
-        var zjNums = countZJNum(dCode);
-        var zjNum = zjNums[1]+zjNums[2]+zjNums[3]+zjNums[4]+zjNums[5];
-        if(zjNum == 0){
-            throw('此选法没有牛小');
+        if(lowCodes.length == 0){
+            throw('至少选一个牛小号');
         }
-        return {actionData:dCode.join(','), actionNum:1};
+        return lowCodes;
     }
 }
 
@@ -2533,15 +2573,13 @@ function dnNdAction(){
         });
 
         var zjNums = countZJNum(dCode);
-        var zjNum = zjNums[6]+zjNums[7]+zjNums[8]+zjNums[9];
+        var zjNum = zjNums[5]+zjNums[6]+zjNums[7]+zjNums[8]+zjNums[9];
         if(zjNum == 0){
             throw('此选法没有牛大');
 		}
-        countDNPL(zjNum)
         return {actionData:dCode.join(','), actionNum:1};
     }
 }
-
 
 /*
  * 计算有没有牛，返回牛几
@@ -2551,7 +2589,6 @@ function dnNdAction(){
  * 返回1-9 代表牛几
  */
 function cal(cards) {
-//    console.log("cards = "+ cards);
     var s = 0;
     var dict = {};
     for (var i = 0; i < cards.length; i++) {
@@ -2579,6 +2616,7 @@ function cal(cards) {
  * 根据选择的号码计算中奖可能总数。
  */
 function countZJNum(dict){
+    var cards = [];
     //返回的中奖num数组，下标0代表牛牛， 下标1代表牛1，以此类推，下标10代表没有牛
     var reObj=[];
     for(var n = 0 ; n <=10 ;n ++){
@@ -2591,7 +2629,7 @@ function countZJNum(dict){
             for (var n3 in dict) {
                 for (var n4 in dict) {
                     for (var n5 in dict) {
-                        var cards = [dict[n1],dict[n2],dict[n3],dict[n4],dict[n5]];
+                        cards = [Number(dict[n1]),Number(dict[n2]),Number(dict[n3]),Number(dict[n4]),Number(dict[n5])];
                         var niuNum = cal(cards);
                         switch(niuNum){
                             case -1:
@@ -2606,9 +2644,9 @@ function countZJNum(dict){
             }
         }
     }
-    // console.log(reObj);
     return reObj;
 }
+
 
 function countDNPL(zjNum) {
     //单注中奖金额

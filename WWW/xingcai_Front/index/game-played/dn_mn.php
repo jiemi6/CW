@@ -2,9 +2,8 @@
 <input type="hidden" name="playedId" value="<?=$this->played?>" />
 <input type="hidden" name="type" value="<?=$this->type?>" />
 <div>
-    <?php foreach(array('牛牛','牛1','牛2','牛3','牛4') as $var){ ?>
-    <div class="pp pp11" action="dnNxAction" length="2" delimiter=" " playedName='<?=$var?>'>
-        <div class="title"><?=$var?></div>
+    <div class="pp pp11" action="dnMnAction" length="1" >
+        <div class="title">选择</div>
         &nbsp;
         <input type="button" value="0" class="code s min" />
         <input type="button" value="1" class="code d min" />
@@ -16,9 +15,9 @@
         <input type="button" value="7" class="code d max" />
         <input type="button" value="8" class="code s max" />
         <input type="button" value="9" class="code d max" />
-
+    
         &nbsp;&nbsp;
-
+        
         <input type="button" value="清" class="action none" />
         <input type="button" value="双" class="action even" />
         <input type="button" value="单" class="action odd" />
@@ -26,7 +25,6 @@
         <input type="button" value="大" class="action large" />
         <input type="button" value="全" class="action all" />
     </div>
-    <?php } ?>
 </div>
 
 <?php
