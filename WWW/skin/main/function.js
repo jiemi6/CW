@@ -2562,22 +2562,34 @@ function dnNxAction(){
  */
 function dnNdAction(){
     var code=[], len=1,codeLen=parseInt(this.attr('length'));
-    var $d=$(this).filter(':visible:first'),
-        dLen=$('.code.checked', $d).length;
-    if(dLen<1){
+    var dLen = 0;
+    $(this).each(function(rowNum,rowObj){
+        dLen=dLen + $('.code.checked', rowObj).length;
+    });
+    if(dLen < 1){
         throw('至少选1位数');
     }else{
-        var dCode=[];
-        $('.code.checked', $d).each(function(i,o){
-            dCode[i]=o.value;
-        });
+        var lowCodes = [];
 
-        var zjNums = countZJNum(dCode);
-        var zjNum = zjNums[5]+zjNums[6]+zjNums[7]+zjNums[8]+zjNums[9];
-        if(zjNum == 0){
-            throw('此选法没有牛大');
-		}
-        return {actionData:dCode.join(','), actionNum:1};
+        $(this).each(function(rowNum,rowObj){
+            if($('.code.checked', rowObj).length == 0){
+                return;
+            }
+            var dCode=[];
+            $('.code.checked', rowObj).each(function(i,o){
+                dCode[i]=o.value;
+            });
+            var zjNums = countZJNum(dCode);
+            if(zjNums[rowNum+5] == 0){
+                return;
+            }
+            var returnObj = {playedId:$("input[name='playedId']").val(), playedName:$(rowObj).attr('playedname'), actionData:dCode.join(','), actionNum:zjNums[rowNum+5], isZ6:false};
+            lowCodes.push(returnObj);
+        });
+        if(lowCodes.length == 0){
+            throw('至少选一个牛大号');
+        }
+        return lowCodes;
     }
 }
 
