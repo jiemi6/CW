@@ -34,9 +34,9 @@
 			<dl class="gp">
 				<dt>高频彩</dt>
 			    
-				<dd><a href="/index.php/index/game/14/59/193/河内5分彩">河内5分彩</a></dd>
-				<dd><a href="/index.php/index/game/26/59/193/河内2分彩">河内2分彩</a></dd>
-				<dd><a href="/index.php/index/game/5/59/193/河内1分彩">河内1分彩</a></dd>
+				<dd><a href="/index.php/index/game/14/59/193/MQ5分彩">MQ5分彩</a></dd>
+				<dd><a href="/index.php/index/game/26/59/193/MQ2分彩">MQ2分彩</a></dd>
+				<dd><a href="/index.php/index/game/5/59/193/MQ1分彩">MQ1分彩</a></dd>
 				<dd><a href="/index.php/index/game/75/59/193/巴西快乐彩">巴西快乐彩</a></dd><dd></dd>
 				<dd><a href="/index.php/index/game/76/59/193/巴西1.5分彩">巴西1.5分彩</a></dd>
 				<dd></dd>

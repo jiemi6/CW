@@ -121,9 +121,9 @@ function qqkf(){
 								<dd><a data="L-13" href="/index.php/index/game/87/2/12/台湾5分彩">台湾5分彩</a></dd>
 								<dd><a data="L-13" href="/index.php/index/game/61/59/193/澳门时时彩">澳门时时彩<span class="hot"></span></a></dd>
 								<dd><a data="L-13" href="/index.php/index/game/62/59/193/台湾时时彩">台湾时时彩<span class="hot"></span></a></dd>
-								<dd><a data="L-14" href="/index.php/index/game/14/59/193/河内5分彩">河内5分彩</span></a></dd>
-								<dd><a data="L-19" href="/index.php/index/game/26/59/193/河内2分彩">河内2分彩</a></dd>
-                                <dd><a data="L-19" href="/index.php/index/game/5/59/193/河内1分彩">河内1分彩</a></dd>
+								<dd><a data="L-14" href="/index.php/index/game/14/59/193/MQ5分彩">MQ5分彩</span></a></dd>
+								<dd><a data="L-19" href="/index.php/index/game/26/59/193/MQ2分彩">MQ2分彩</a></dd>
+                                <dd><a data="L-19" href="/index.php/index/game/5/59/193/MQ1分彩">MQ1分彩</a></dd>
 								<dd><a data="L-19" href="/index.php/index/game/75/59/193/巴西快乐彩">巴西快乐彩</a></dd>
                                 <dd><a data="L-25" href="/index.php/index/game/76/59/193/巴西1.5分彩">巴西1.5分彩<span style="margin-left: 10px;" class="new"></span></a></dd>
 								<dd><a data="L-19" href="/index.php/index/game/69/澳门3D">澳门3D</a></dd>
@@ -275,7 +275,7 @@ function qqkf(){
                         </li>
                         <li class="cp_list_03" id="lottery_L-19">
                             <em class="cp_l_alpha"></em>
-                            <a href="/index.php/index/game/14/59/193/河内5分彩">
+                            <a href="/index.php/index/game/14/59/193/MQ5分彩">
                                 <span class="hnquick5_logo"></span>
                                 <p>距<span class="issue">下一期</span>销售截止</p>
                                 <div class="cp_time_01">
@@ -286,7 +286,7 @@ function qqkf(){
                         </li>
                         <li class="cp_list_04" id="lottery_L-23">
                             <em class="cp_l_alpha"></em>
-                            <a href="/index.php/index/game/5/59/193/河内1分彩"><span class="hnffc_logo"></span></a>
+                            <a href="/index.php/index/game/5/59/193/MQ1分彩"><span class="hnffc_logo"></span></a>
                         </li>
                         <li class="cp_list_05" id="lottery_L-24">
                             <em class="cp_l_alpha"></em>
@@ -294,7 +294,7 @@ function qqkf(){
                         </li>
                         <li class="cp_list_06">
                             <em class="cp_l_alpha"></em>
-                            <a href="/index.php/index/game/12/2/12/腾讯分分彩"><span class="xjssc_logo"></span></a>
+                            <a href="/index.php/index/game/83/2/12/腾讯分分彩"><span class="xjssc_logo"></span></a>
                         </li>
                         <li class="cp_list_07">
                             <em class="cp_l_alpha"></em>

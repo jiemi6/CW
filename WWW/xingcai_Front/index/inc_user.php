@@ -39,14 +39,14 @@
 				  	<dl>
 						<dt>高频彩</dt>
                                                     <dd><a data="L-1" href="/index.php/index/game/1/2/12/重庆时时彩">重庆时时彩<i class="hot"></i></a></dd>
-                                                    <dd><a data="L-6" href="/index.php/index/game/12/2/12/腾讯分分彩">腾讯分分彩</a></dd>
+                                                    <dd><a data="L-6" href="/index.php/index/game/83/2/12/腾讯分分彩">腾讯分分彩</a></dd>
                                                     <dd><a data="L-13" href="/index.php/index/game/60/2/12/加纳分分彩">加纳分分彩</a></dd>
                                                     <dd><a data="L-13" href="/index.php/index/game/61/59/193/澳门时时彩">澳门时时彩<i class="hot"></i></a></dd>
                                                     <dd><a data="L-13" href="/index.php/index/game/62/59/193/台湾时时彩">台湾时时彩<i class="hot"></i></a></dd>
-                                                    <dd><a data="L-14" href="/index.php/index/game/14/59/193/河内5分彩">河内5分彩</span></a></dd>
-                                                    <dd><a data="L-19" href="/index.php/index/game/26/59/193/河内2分彩">河内2分彩</a></dd>
-                                                    <dd><a data="L-19" href="/index.php/index/game/5/59/193/河内2分彩">河内1分彩</a></dd>
-                                                    <dd><a data="L-19" href="/index.php/index/game/75/59/193">巴西快乐彩</a></dd>
+                                                    <dd><a data="L-14" href="/index.php/index/game/14/59/193/MQ5分彩">MQ5分彩</span></a></dd>
+                                                    <dd><a data="L-19" href="/index.php/index/game/5/59/193">MQ2分彩</a></dd>
+                                                    <dd><a data="L-19" href="/index.php/index/game/5/59/193">MQ1分彩</a></dd>
+                                                    <dd><a data="L-19" href="/index.php/index/game/5/59/193">巴西快乐彩</a></dd>
                                                     <dd><a data="L-25" href="/index.php/index/game/76/59/193/巴西1.5分彩">巴西1.5分彩<i class="new"></i></a></dd>
                                                     <dd><a data="L-19" href="/index.php/index/game/69/澳门3D">澳门3D</a></dd>
                                                     <dd><a data="L-19" href="/index.php/index/game/70/台湾3D">台湾3D</a></dd>
