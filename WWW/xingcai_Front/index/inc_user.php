@@ -45,7 +45,7 @@
                                                     <dd><a data="L-13" href="/index.php/index/game/62/59/193/台湾时时彩">台湾时时彩<i class="hot"></i></a></dd>
                                                     <dd><a data="L-14" href="/index.php/index/game/14/59/193/河内5分彩">河内5分彩</span></a></dd>
                                                     <dd><a data="L-19" href="/index.php/index/game/26/59/193/河内2分彩">河内2分彩</a></dd>
-                                                    <dd><a data="L-19" href="/index.php/index/game/5/59/193/河内1分彩">巴西快乐彩</a></dd>
+                                                    <dd><a data="L-19" href="/index.php/index/game/5/59/193/河内1分彩">河内1分彩</a></dd>
                                                     <dd><a data="L-25" href="/index.php/index/game/76/59/193/巴西1.5分彩">巴西1.5分彩<i class="new"></i></a></dd>
                                                     <dd><a data="L-19" href="/index.php/index/game/69/澳门3D">澳门3D</a></dd>
                                                     <dd><a data="L-19" href="/index.php/index/game/70/台湾3D">台湾3D</a></dd>
