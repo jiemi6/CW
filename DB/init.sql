@@ -16952,20 +16952,20 @@ INSERT INTO `dunling_chat` VALUES ('25', '2017', '6256', '1231235963');
 -- View structure for `ssc_fcoin_bet`
 -- ----------------------------
 DROP VIEW IF EXISTS `ssc_fcoin_bet`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `ssc_fcoin_bet` AS select `b`.`id` AS `betId`,`b`.`type` AS `type`,`b`.`playedId` AS `playedId`,`b`.`uid` AS `uid`,`b`.`username` AS `username`,`b`.`actionNo` AS `actionNo`,`b`.`actionTime` AS `actionTime`,`l`.`info` AS `info`,`l`.`liqType` AS `liqType`,`l`.`fcoin` AS `fcoin` from (`blast_coin_log` `l` join `blast_bets` `b`) where ((`b`.`id` = `l`.`extfield0`) and (`b`.`isDelete` = 0) and (`b`.`lotteryNo` = '') and (`l`.`liqType` between 101 and 102)) ;
+CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `ssc_fcoin_bet` AS select `b`.`id` AS `betId`,`b`.`type` AS `type`,`b`.`playedId` AS `playedId`,`b`.`uid` AS `uid`,`b`.`username` AS `username`,`b`.`actionNo` AS `actionNo`,`b`.`actionTime` AS `actionTime`,`l`.`info` AS `info`,`l`.`liqType` AS `liqType`,`l`.`fcoin` AS `fcoin` from (`blast_coin_log` `l` join `blast_bets` `b`) where ((`b`.`id` = `l`.`extfield0`) and (`b`.`isDelete` = 0) and (`b`.`lotteryNo` = '') and (`l`.`liqType` between 101 and 102)) ;
 
 -- ----------------------------
 -- View structure for `ssc_fcoin_cash`
 -- ----------------------------
 DROP VIEW IF EXISTS `ssc_fcoin_cash`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `ssc_fcoin_cash` AS select `r`.`id` AS `rid`,`l`.`uid` AS `uid`,`r`.`actionTime` AS `actionTime`,`l`.`info` AS `info`,`l`.`liqType` AS `liqType`,`l`.`fcoin` AS `fcoin` from (`blast_member_cash` `r` join `blast_coin_log` `l`) where ((`l`.`extfield0` = `r`.`id`) and (`r`.`state` = 1) and (`r`.`isDelete` = 0) and (`l`.`liqType` = 106)) ;
+CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `ssc_fcoin_cash` AS select `r`.`id` AS `rid`,`l`.`uid` AS `uid`,`r`.`actionTime` AS `actionTime`,`l`.`info` AS `info`,`l`.`liqType` AS `liqType`,`l`.`fcoin` AS `fcoin` from (`blast_member_cash` `r` join `blast_coin_log` `l`) where ((`l`.`extfield0` = `r`.`id`) and (`r`.`state` = 1) and (`r`.`isDelete` = 0) and (`l`.`liqType` = 106)) ;
 
 -- ----------------------------
 -- Procedure structure for `addScore`
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `addScore`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `addScore`(_uid int, _amount float)
+CREATE PROCEDURE `addScore`(_uid int, _amount float)
 begin
 	
 	declare bonus float;
@@ -16986,7 +16986,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `auto_clearData`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `auto_clearData`()
+CREATE PROCEDURE `auto_clearData`()
 begin
 
 	declare endDate int;
@@ -17010,7 +17010,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `cancelBet`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `cancelBet`(_zhuiHao varchar(255))
+CREATE PROCEDURE `cancelBet`(_zhuiHao varchar(255))
 begin
 
 	declare amount float;
@@ -17046,7 +17046,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `clearData`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `clearData`(dateInt int(11))
+CREATE PROCEDURE `clearData`(dateInt int(11))
 begin
 
 	declare endDate int;
@@ -17079,7 +17079,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `clearData2`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `clearData2`(dateInt int(11))
+CREATE PROCEDURE `clearData2`(dateInt int(11))
 begin
 
 	declare endDate int;
@@ -17097,7 +17097,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `conComAll`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `conComAll`(baseAmount float, parentAmount float, parentLevel int)
+CREATE PROCEDURE `conComAll`(baseAmount float, parentAmount float, parentLevel int)
 begin
 
 	declare conUid int;
@@ -17130,7 +17130,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `conComSingle`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `conComSingle`(conUid int, parentAmount float, parentLevel int)
+CREATE PROCEDURE `conComSingle`(conUid int, parentAmount float, parentLevel int)
 begin
 
 	declare parentId int;
@@ -17176,7 +17176,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `consumptionCommission`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `consumptionCommission`()
+CREATE PROCEDURE `consumptionCommission`()
 begin
 
 	declare baseAmount float;
@@ -17203,7 +17203,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `delUser`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `delUser`(_uid int)
+CREATE PROCEDURE `delUser`(_uid int)
 begin
 	
 	delete from blast_bets where `uid`=_uid;
@@ -17232,7 +17232,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `delUser2`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `delUser2`(_uid int)
+CREATE PROCEDURE `delUser2`(_uid int)
 begin
 	
 	delete from blast_bets where `uid`=_uid;
@@ -17261,7 +17261,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `delUsers`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `delUsers`(_coin float(10,2), _date int)
+CREATE PROCEDURE `delUsers`(_coin float(10,2), _date int)
 begin
 	declare uid_del int;
 	declare done int default 0;
@@ -17288,7 +17288,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `getQzInfo`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `getQzInfo`(_uid int, inout _fanDian float, inout _parentId int)
+CREATE PROCEDURE `getQzInfo`(_uid int, inout _fanDian float, inout _parentId int)
 begin
 
 	declare done int default 0;
@@ -17310,7 +17310,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `isFirstRechargeCom`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `isFirstRechargeCom`(_uid int, OUT flag int)
+CREATE PROCEDURE `isFirstRechargeCom`(_uid int, OUT flag int)
 begin
 	
 	declare dateTime int default unix_timestamp(curdate());
@@ -17325,7 +17325,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `kanJiang`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `kanJiang`(_betId int, _zjCount int, _kjData varchar(255) character set utf8, _kset varchar(255) character set utf8)
+CREATE PROCEDURE `kanJiang`(_betId int, _zjCount int, _kjData varchar(255) character set utf8, _kset varchar(255) character set utf8)
 begin
 	
 	declare `uid` int;									
@@ -17447,7 +17447,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `pro_count`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `pro_count`(_date varchar(20))
+CREATE PROCEDURE `pro_count`(_date varchar(20))
 begin
 	
 	declare fromTime int;
@@ -17474,7 +17474,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `pro_pay`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `pro_pay`()
+CREATE PROCEDURE `pro_pay`()
 begin
 
 	declare _m_id int;					
@@ -17541,7 +17541,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `readConComSet`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `readConComSet`(OUT baseAmount float, OUT baseAmount2 float, OUT parentAmount float, OUT superParentAmount float)
+CREATE PROCEDURE `readConComSet`(OUT baseAmount float, OUT baseAmount2 float, OUT parentAmount float, OUT superParentAmount float)
 begin
 
 	declare _name varchar(255);
@@ -17576,7 +17576,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `readRechargeComSet`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `readRechargeComSet`(OUT baseAmount float, OUT parentAmount float, OUT superParentAmount float)
+CREATE PROCEDURE `readRechargeComSet`(OUT baseAmount float, OUT parentAmount float, OUT superParentAmount float)
 begin
 
 	declare _name varchar(255);
@@ -17609,7 +17609,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `setCoin`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `setCoin`(_coin float, _fcoin float, _uid int, _liqType int, _type int, _info varchar(255) character set utf8, _extfield0 int, _extfield1 varchar(255) character set utf8, _extfield2 varchar(255) character set utf8)
+CREATE PROCEDURE `setCoin`(_coin float, _fcoin float, _uid int, _liqType int, _type int, _info varchar(255) character set utf8, _extfield0 int, _extfield1 varchar(255) character set utf8, _extfield2 varchar(255) character set utf8)
 begin
 	
 	
@@ -17642,7 +17642,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `setRechargeCom`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `setRechargeCom`(_coin float, _uid int, _rechargeId int, _serId int)
+CREATE PROCEDURE `setRechargeCom`(_coin float, _uid int, _rechargeId int, _serId int)
 begin
 	
 	declare baseAmount float;
@@ -17685,7 +17685,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `setUpFanDian`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `setUpFanDian`(amount float, INOUT _fanDian float, INOUT _parentId int, _type int, srcBetId int, srcUid int, INOUT srcUserName varchar(255))
+CREATE PROCEDURE `setUpFanDian`(amount float, INOUT _fanDian float, INOUT _parentId int, _type int, srcBetId int, srcUid int, INOUT srcUserName varchar(255))
 begin
 	
 	declare p_parentId int;		
@@ -17725,7 +17725,7 @@ DELIMITER ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `task`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `task`()
+CREATE PROCEDURE `task`()
 begin   
 update blast_members set todayget=0 where todayget=1;
 update blast_members set vipjjtoday=0 where vipjjtoday=1;
@@ -17738,7 +17738,7 @@ DELIMITER ;
 -- ----------------------------
 DROP EVENT IF EXISTS `event_auto_clearData`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` EVENT `event_auto_clearData` ON SCHEDULE EVERY 1 MONTH STARTS '2014-11-01 03:00:00' ON COMPLETION NOT PRESERVE ENABLE DO call auto_clearData()
+CREATE EVENT `event_auto_clearData` ON SCHEDULE EVERY 1 MONTH STARTS '2014-11-01 03:00:00' ON COMPLETION NOT PRESERVE ENABLE DO call auto_clearData()
 ;;
 DELIMITER ;
 
@@ -17747,7 +17747,7 @@ DELIMITER ;
 -- ----------------------------
 DROP EVENT IF EXISTS `event_conCom`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` EVENT `event_conCom` ON SCHEDULE EVERY 1 DAY STARTS '2014-11-01 23:50:00' ON COMPLETION NOT PRESERVE ENABLE DO call consumptionCommission()
+CREATE EVENT `event_conCom` ON SCHEDULE EVERY 1 DAY STARTS '2014-11-01 23:50:00' ON COMPLETION NOT PRESERVE ENABLE DO call consumptionCommission()
 ;;
 DELIMITER ;
 
@@ -17756,7 +17756,7 @@ DELIMITER ;
 -- ----------------------------
 DROP EVENT IF EXISTS `event_count`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` EVENT `event_count` ON SCHEDULE EVERY 1 DAY STARTS '2012-08-10 03:00:00' ON COMPLETION NOT PRESERVE ENABLE DO call pro_count('')
+CREATE EVENT `event_count` ON SCHEDULE EVERY 1 DAY STARTS '2012-08-10 03:00:00' ON COMPLETION NOT PRESERVE ENABLE DO call pro_count('')
 ;;
 DELIMITER ;
 
@@ -17765,7 +17765,7 @@ DELIMITER ;
 -- ----------------------------
 DROP EVENT IF EXISTS `event_pay`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` EVENT `event_pay` ON SCHEDULE EVERY 90 SECOND STARTS '2015-06-28 22:42:25' ON COMPLETION NOT PRESERVE ENABLE DO begin
+CREATE EVENT `event_pay` ON SCHEDULE EVERY 90 SECOND STARTS '2015-06-28 22:42:25' ON COMPLETION NOT PRESERVE ENABLE DO begin
 	
 	call pro_pay();
 
@@ -17778,7 +17778,7 @@ DELIMITER ;
 -- ----------------------------
 DROP EVENT IF EXISTS `event_resetdbqb`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` EVENT `event_resetdbqb` ON SCHEDULE EVERY 1 DAY STARTS '2014-11-01 00:10:00' ON COMPLETION NOT PRESERVE ENABLE DO call resetdbqb()
+CREATE EVENT `event_resetdbqb` ON SCHEDULE EVERY 1 DAY STARTS '2014-11-01 00:10:00' ON COMPLETION NOT PRESERVE ENABLE DO call resetdbqb()
 ;;
 DELIMITER ;
 
@@ -17787,7 +17787,7 @@ DELIMITER ;
 -- ----------------------------
 DROP EVENT IF EXISTS `task1`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` EVENT `task1` ON SCHEDULE EVERY 1 DAY STARTS '2016-11-25 00:00:00' ON COMPLETION NOT PRESERVE ENABLE DO call task()
+CREATE EVENT `task1` ON SCHEDULE EVERY 1 DAY STARTS '2016-11-25 00:00:00' ON COMPLETION NOT PRESERVE ENABLE DO call task()
 ;;
 DELIMITER ;
 DROP TRIGGER IF EXISTS `trig_recharge_update`;
