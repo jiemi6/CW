@@ -177,7 +177,7 @@ exports.cp=[
 		enable:true,                                                                                            //
 		timer:'cqssc1',                                                                                          //
 		option:{                                                                                                //
-			host:"127.0.0.15",                                                                                   //
+			host:"127.0.0.1",                                                                                   //
 			timeout:50000,                                                                                      //重
 			path: '/xml/cqssc/cqssc_360.php',                                                                       //庆
 			headers:{                                                                                           //时
@@ -212,7 +212,7 @@ exports.cp=[
 		enable:true,                                                                                            //
 		timer:'xjssc',                                                                                          //
 		option:{                                                                                                //
-			host:"127.0.0.15",                                                                                   //
+			host:"127.0.0.1",                                                                                   //
 			timeout:50000,                                                                                      //新
 			path: '/xml/xjssc/xjssc.php',                                                                       	//疆
 			headers:{                                                                                           //时
@@ -246,7 +246,7 @@ exports.cp=[
 		enable:true,                                                                                            //
 		timer:'tjssc',                                                                                          //
 		option:{                                                                                                //
-			host:"127.0.0.15",                                                                                   //天
+			host:"127.0.0.1",                                                                                   //天
 			timeout:50000,                                                                                      //津
 			path: '/xml/tjssc/tjssc.php',                                                                 		    //时
 			headers:{                                                                                           //时
@@ -279,7 +279,7 @@ exports.cp=[
 		enable:true,                                                                                            //
 		timer:'bjpk10',                                                                                         //
 		option:{                                                                                                //
-			host:"127.0.0.15",                                                                                   //
+			host:"127.0.0.1",                                                                                   //
 			timeout:50000,                                                                                      //
 			path: '/xml/pk10/pk10_cp5678.php',                                                                     //
 			headers:{                                                                                           //
@@ -313,7 +313,7 @@ exports.cp=[
 		enable:true,                                                                                            //选
 		timer:'gd11',                                                                                           //5
 		option:{                                                                                                //
-			host:"127.0.0.15",                                                                                   //
+			host:"127.0.0.1",                                                                                   //
 			timeout:50000,                                                                                      //
 			path: '/xml/gd11/gd115_cai88.php',                                                                      //
 			headers:{                                                                                           //
@@ -348,7 +348,7 @@ exports.cp=[
 		enable:true,                                                                                            //
 		timer:'sd11',                                                                                           //
 		option:{                                                                                                //
-			host:"127.0.0.15",                                                                                   //
+			host:"127.0.0.1",                                                                                   //
 			timeout:50000,                                                                                      //
 			path: '/xml/sd11/sd115_360.php',                                                                        //山
 			headers:{                                                                                           //东
@@ -382,7 +382,7 @@ exports.cp=[
 		enable:true,                                                                                            //
 		timer:'jx11',                                                                                           //
 		option:{                                                                                                //
-			host:"127.0.0.15",                                                                                   //
+			host:"127.0.0.1",                                                                                   //
 			timeout:50000,                                                                                      //江
 			path: '/xml/jx11/jx115_360.php',                                                                      	//西
 			headers:{                                                                                           //11
@@ -415,7 +415,7 @@ exports.cp=[
 		enable:true,                                                                                            //
 		timer:'jx11',                                                                                           //
 		option:{                                                                                                //
-			host:"127.0.0.15",                                                                                   //
+			host:"127.0.0.1",                                                                                   //
 			timeout:50000,                                                                                      //
 			path: '/xml/jx11/jx115_cai88.php',                                                                      //
 			headers:{                                                                                           //
@@ -450,7 +450,7 @@ exports.cp=[
 		enable:true,                                                                                            //
 		timer:'sh11',                                                                                           //
 		option:{                                                                                                //
-			host:"127.0.0.15",                                                                                   //
+			host:"127.0.0.1",                                                                                   //
 			timeout:50000,                                                                                      //上
 			path: '/xml/sh11/sh115_360.php',                                                                        //海
 			headers:{                                                                                           //11
@@ -484,7 +484,7 @@ exports.cp=[
 		enable:true,                                                                                            //
 		timer:'jsk3',                                                                                           //
 		option:{                                                                                                //
-			host:"127.0.0.15",                                                                                   //
+			host:"127.0.0.1",                                                                                   //
 			timeout:50000,                                                                                      //江
 			path: '/xml/jsk3/jsk3_360.php',                                                                      	//苏
 			headers:{                                                                                           //快
@@ -516,9 +516,9 @@ exports.cp=[
 		source:'北京福利彩票',                                                                                  //
 		name:'bjkl8',                                                                                           //
 		enable:true,                                                                                            //
-		timer:'bjkl8',                                                                                          //
+		timer:'bj                                                                                               //
 		option:{                                                                                                //北
-			host:"127.0.0.15",                                                                                   //京
+			host:"127.0.0.1",                                                                                   //京
 			timeout:50000,                                                                                      //快
 			path: '/xml/kl8/kl8.php',                                                                      			//乐
 			headers:{                                                                                           //8
@@ -624,7 +624,7 @@ exports.cp=[
 		enable:true,                                                                                          	//
 		timer:'am3d',                                                                                        	//
 		option:{                                                                                              	//
-			host:"127.0.0.15",                                                                                   	//
+			host:"127.0.0.1",                                                                                   	//
 			timeout:50000,                                                                                    	//
 			path: '/index.php/xingcai/xcam3d',                                                                	//
 			headers:{                                                                                         	//
@@ -657,7 +657,7 @@ exports.cp=[
 		enable:true,                                                                                          	//
 		timer:'tw3d',                                                                                        	//
 		option:{                                                                                              	//
-			host:"127.0.0.15",                                                                                   	//
+			host:"127.0.0.1",                                                                                   	//
 			timeout:50000,                                                                                    	//
 			path: '/index.php/xingcai/xctw3d',                                                                	//
 			headers:{                                                                                         	//
@@ -690,7 +690,7 @@ exports.cp=[
 		enable:true,                                                                                          	//
 		timer:'gslhc',                                                                                        	//
 		option:{                                                                                              	//
-			host:"127.0.0.15",                                                                                   	//
+			host:"127.0.0.1",                                                                                   	//
 			timeout:50000,                                                                                    	//
 			path: '/index.php/xingcai/xclhc',                                                                 	//
 			headers:{                                                                                         	//
@@ -723,7 +723,7 @@ exports.cp=[
 		enable:true,                                                                                          	//彩
 		timer:'bxklc',                                                                                        	//
 		option:{                                                                                              	//
-			host:"127.0.0.15",                                                                                   	//
+			host:"127.0.0.1",                                                                                   	//
 			timeout:50000,                                                                                    	//
 			path: '/index.php/xingcai/xcbxklc',                                                               	//
 			headers:{                                                                                         	//
@@ -756,7 +756,7 @@ exports.cp=[
 		enable:true,                                                                                          	//
 		timer:'bx15',                                                                                         	//
 		option:{                                                                                              	//
-			host:"127.0.0.15",                                                                                   	//
+			host:"127.0.0.1",                                                                                   	//
 			timeout:50000,                                                                                    	//
 			path: '/index.php/xingcai/xcbx15',                                                                	//
 			headers:{                                                                                         	//
@@ -788,7 +788,7 @@ exports.cp=[
 		enable:true,                                                                                          	//
 		timer:'qtllc',                                                                                        	//
 		option:{                                                                                              	//
-			host:"127.0.0.15",                                                                                   	//
+			host:"127.0.0.1",                                                                                   	//
 			timeout:50000,                                                                                    	//
 			path: '/index.php/xingcai/xc5fc',                                                                 	//
 			headers:{                                                                                         	//
@@ -822,7 +822,7 @@ exports.cp=[
 		enable:true,                                                                                          	//
 		timer:'ffc',                                                                                          	//
 		option:{                                                                                              	//杏
-			host:"127.0.0.15",                                                                                   	//彩
+			host:"127.0.0.1",                                                                                   	//彩
 			timeout:50000,                                                                                    	//系
 			path: '/index.php/xingcai/xcffc',                                                                 	//统
 			headers:{                                                                                         	//彩
@@ -855,7 +855,7 @@ exports.cp=[
 		enable:true,                                                                                          	//
 		timer:'lfc',                                                                                          	//
 		option:{                                                                                              	//
-			host:"127.0.0.15",                                                                                   	//
+			host:"127.0.0.1",                                                                                   	//
 			timeout:50000,                                                                                    	//
 			path: '/index.php/xingcai/xc2fc',                                                                 	//杏
 			headers:{                                                                                         	//彩
@@ -889,7 +889,7 @@ exports.cp=[
 		enable:true,                                                                                          	//
 		timer:'ffc',                                                                                          	//
 		option:{                                                                                              	//杏
-				host:"127.0.0.15",                                                                                   	//彩
+				host:"127.0.0.1",                                                                                   	//彩
 			timeout:50000,                                                                                    	//系
 			path: '/index.php/xingcai/ffc_1t',                                                                 	//统
 			headers:{                                                                                         	//彩
@@ -924,7 +924,7 @@ exports.cp=[
 		enable: true,                                                                                                                         //
 		timer: 'hklhc',                                                                                          	//
 		option:{                                                                                              	//杏
-			host:"127.0.0.15",                                                                                   	//彩
+			host:"127.0.0.1",                                                                                   	//彩
 			timeout:50000,                                                                                    	//系
 			path: '/xml/lhc/lhc.php',                                                                 	//统
 			headers:{                                                                                         	//彩
