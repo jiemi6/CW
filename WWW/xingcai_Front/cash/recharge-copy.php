@@ -326,18 +326,22 @@ height:15px; width:15px
     </tr>
 	<tr>
       <td align="right">收款户名：</td>
-      <td><input id="bank-username" readonly value="<?=$memberBank["username"]?>" /></td> 
+      <td><input id="bank-username" readonly value="<?=$memberBank["username"]?>"  style="width:200px;"/></td>
     </tr>
+  <tr>
+      <td align="right">收款银行卡：</td>
+      <td><input id="bank-username" readonly value="<?=$memberBank["account"]?>" style="width:200px;"/></td>
+  </tr>
     <tr>
       <td align="right">充值金额：</td>
-      <td><input id="recharg-amount" readonly value="<?=$args[0]['amount']?>" /></td>
+      <td><input id="recharg-amount" readonly value="<?=$args[0]['amount']?>" style="width:200px;"/></td>
     </tr>
 	<tr>
       <td align="right">充值编号：</td>
-      <td><input id="username" readonly value="<?=$args[0]['rechargeId']?>" /></td>  
+      <td><input id="username" readonly value="<?=$args[0]['rechargeId']?>" style="width:200px;"/></td>
     </tr>
     <tr>
-      <td align="right">扫码支付：</td>
+      <td align="right">支付宝转账：</td>
 	  <td>
      <div class="qrimage-wrap white b-a text-center">
 	
