@@ -361,12 +361,14 @@ function requestKj(type,number){
 
 function createMySQLClient(){
 	try{
-		
-		
-		return mysql.createConnection(config.dbinfo).on('error', function(err){
+
+		console.log(config.dbinfo);
+		var connection = mysql.createConnection(config.dbinfo).on('error', function(err){
 			//console.log(err);
 			throw('连接数据库失败');
 		});
+		connection.connect(); 
+		return connection;
 	}catch(err){
 		log('连接数据库失败：'+err);
 		return false;

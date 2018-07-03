@@ -967,8 +967,8 @@ exports.submit={
 
 exports.dbinfo={
 	host:'localhost',
-	user:'root',
-	password:'root',
+	user:'0xc',
+	password:'0xc',
 	database:'0xc'
 
 }
