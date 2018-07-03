@@ -516,7 +516,7 @@ exports.cp=[
 		source:'北京福利彩票',                                                                                  //
 		name:'bjkl8',                                                                                           //
 		enable:true,                                                                                            //
-		timer:'bj                                                                                               //
+		timer:'bj',                                                                                               //
 		option:{                                                                                                //北
 			host:"127.0.0.1",                                                                                   //京
 			timeout:50000,                                                                                      //快

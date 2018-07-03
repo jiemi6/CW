@@ -9,7 +9,7 @@ class WebLoginBase extends WebBase{
 	public $NO;			// 期号
 	public $gameFanDian;
 	function __construct($dsn, $user='', $password=''){
-		session_start();
+		if(!session_id()) session_start();
 		if(!$_SESSION[$this->memberSessionName]){
 			header('location: /index.php/user/login');
 		    exit('您没有登录');
