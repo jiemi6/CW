@@ -361,7 +361,9 @@ function requestKj(type,number){
 
 function createMySQLClient(){
 	try{
-		return mysql.createClient(config.dbinfo).on('error', function(err){
+		
+		
+		return mysql.createConnection(config.dbinfo).on('error', function(err){
 			//console.log(err);
 			throw('连接数据库失败');
 		});
